@@ -15,17 +15,17 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 @Entity
 @Table(name = "search_engine")
 @XmlRootElement
-@JsonIgnoreProperties({"adaptedQuerys"})
 @SequenceGenerator(name = "SearchEngineSequenceGenerator", sequenceName = "sq_search_engine")
 public class SearchEngine implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private Long idSearchEngine;
 	private String nmSearchEngine;
 	
@@ -58,7 +58,6 @@ public class SearchEngine implements Serializable {
 	}
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "searchEngine")
-	@JsonBackReference
 	public Set<AdaptedQuery> getAdaptedQuerys() {
 		return this.adaptedQuerys;
 	}

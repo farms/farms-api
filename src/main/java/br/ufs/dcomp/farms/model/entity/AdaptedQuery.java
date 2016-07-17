@@ -14,8 +14,6 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 @Entity
 @Table(name = "adapted_query")
 @XmlRootElement
@@ -70,7 +68,6 @@ public class AdaptedQuery implements Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_search_engine", nullable = false)
-	@JsonManagedReference
 	public SearchEngine getSearchEngine() {
 		return searchEngine;
 	}
@@ -81,7 +78,6 @@ public class AdaptedQuery implements Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_standard_query", nullable = false)
-	@JsonManagedReference
 	public StandardQuery getStandardQuery() {
 		return standardQuery;
 	}

@@ -16,16 +16,12 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import br.ufs.dcomp.farms.model.enums.ReviewEnum;
 
 @Entity
 @Table(name = "project")
 @XmlRootElement
-@JsonIgnoreProperties({"studies", "projectMembers"})
+//@JsonIgnoreProperties({"studies", "projectMembers"})
 @SequenceGenerator(name = "ProjectSequenceGenerator", sequenceName = "sq_project")
 public class Project {
 	
@@ -156,7 +152,6 @@ public class Project {
 	}
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "project")
-	@JsonBackReference
 	public Set<StandardQuery> getStandardQuerys() {
 		return this.standardQuerys;
 	}
@@ -166,7 +161,6 @@ public class Project {
 	}
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "project")
-	@JsonBackReference
 	public Set<Study> getStudies() {
 		return this.studies;
 	}

@@ -16,7 +16,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import br.ufs.dcomp.farms.model.enums.ReadingRateEnum;
 import br.ufs.dcomp.farms.model.enums.StudyStatusEnum;
@@ -25,6 +25,7 @@ import br.ufs.dcomp.farms.model.enums.VenueEnum;
 @Entity
 @Table(name = "study")
 @XmlRootElement
+@JsonIgnoreProperties({"project", "search"})
 @SequenceGenerator(name = "StudySequenceGenerator", sequenceName = "sq_study")
 public class Study implements Serializable {
 
@@ -250,7 +251,6 @@ public class Study implements Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_project", nullable = false)
-	@JsonManagedReference
 	public Project getProject() {
 		return this.project;
 	}
@@ -261,7 +261,6 @@ public class Study implements Serializable {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_search", nullable = false)
-	@JsonManagedReference
 	public Search getSearch() {
 		return this.search;
 	}

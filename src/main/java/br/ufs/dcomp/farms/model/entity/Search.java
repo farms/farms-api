@@ -20,19 +20,19 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import br.ufs.dcomp.farms.model.enums.SearchEnum;
 
 @Entity
 @Table(name = "search")
 @XmlRootElement
-@JsonIgnoreProperties({"studies"})
 @SequenceGenerator(name = "SearchSequenceGenerator", sequenceName = "sq_search")
 public class Search implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private Long idSearch;
 	private Long nrSearch;
 	private String nmSearch;
@@ -104,7 +104,6 @@ public class Search implements Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_adapted_query", nullable = false)
-	@JsonManagedReference
 	public AdaptedQuery getAdaptedQuery() {
 		return adaptedQuery;
 	}
@@ -114,7 +113,6 @@ public class Search implements Serializable {
 	}
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "search")
-	@JsonManagedReference
 	public Set<Study> getStudies() {
 		return this.studies;
 	}

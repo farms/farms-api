@@ -17,14 +17,12 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import br.ufs.dcomp.farms.model.enums.StateEnum;
 
 @Entity
 @Table(name = "researcher")
 @XmlRootElement
-@JsonIgnoreProperties({"projectMembers"})
+//@JsonIgnoreProperties({"projectMembers"})
 @SequenceGenerator(name = "ResearcherSequenceGenerator", sequenceName = "sq_researcher")
 public class Researcher implements Serializable {
 
