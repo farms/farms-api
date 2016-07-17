@@ -1,0 +1,6 @@
+br\ufs\dcomp\farms\model\dao\ReseacherDaoTest.class
+br\ufs\dcomp\farms\model\service\AccountServiceTest.class
+br\ufs\dcomp\farms\model\dao\SpringUtil.class
+br\ufs\dcomp\farms\model\service\ResearcherServiceTest.class
+br\ufs\dcomp\farms\model\service\ProjectServiceTest.class
+br\ufs\dcomp\farms\core\FarmsCryptTest.class

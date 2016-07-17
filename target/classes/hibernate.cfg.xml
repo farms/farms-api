@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Mapping of the Java Class.  -->
+		<mapping class="br.ufs.dcomp.farms.model.entity.dba.TableDba" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.dba.SequenceDba" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.dba.ColumnDba" />
+		
+		<mapping class="br.ufs.dcomp.farms.model.entity.Country" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.Institution" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.Researcher" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.ResearcherRole" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.Project" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.ProjectMember" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.Objective" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.MainQuestion" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.SecondaryQuestion" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.Language" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.StudyLanguage" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.SearchKeyword" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.SearchEngine" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.BaseUseCriteria" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.StandardQuery" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.AdaptedQuery" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.Study" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.SelectionCriteria" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.SelectionStep" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.Review" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.Author" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.StudyAuthor" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.Invitation" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.Classification" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.Option" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.AdaptedQuerySearchField" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.BaseUseCriteria" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.Search" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.StudySummary" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.SelectionStepResearcher" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.StudyData" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.ResearcherSearchEngine" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.Review" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.SelectionResult" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.RequiredData" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.ExtractionStep" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.ExtractionStepResearcher" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.CriteriaResultJustification" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.CriteriaReviewJustification" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.DuplicateStudy" />
+		<mapping class="br.ufs.dcomp.farms.model.entity.RatedContent" />
+	</session-factory>
+</hibernate-configuration>
