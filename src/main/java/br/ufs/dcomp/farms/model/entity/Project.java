@@ -21,7 +21,6 @@ import br.ufs.dcomp.farms.model.enums.ReviewEnum;
 @Entity
 @Table(name = "project")
 @XmlRootElement
-//@JsonIgnoreProperties({"studies", "projectMembers"})
 @SequenceGenerator(name = "ProjectSequenceGenerator", sequenceName = "sq_project")
 public class Project {
 	
@@ -38,6 +37,7 @@ public class Project {
 	private Set<SelectionCriteria> selectionCriterias = new HashSet<SelectionCriteria>(0);
 	private Set<SearchKeyword> searchKeywords = new HashSet<SearchKeyword>(0);
 	private Set<StandardQuery> standardQuerys = new HashSet<StandardQuery>(0);
+	private Set<Study> search = new HashSet<Study>(0);
 	private Set<Study> studies = new HashSet<Study>(0);
 	
 	public Project() {}
@@ -160,6 +160,15 @@ public class Project {
 		this.standardQuerys = standardQuerys;
 	}
 	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "search")
+	public Set<Study> getSearch() {
+		return search;
+	}
+
+	public void setSearch(Set<Study> search) {
+		this.search = search;
+	}
+
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "project")
 	public Set<Study> getStudies() {
 		return this.studies;

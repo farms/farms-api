@@ -26,7 +26,8 @@ public class StudyCreatedDto {
 	private ReadingRateEnum tpReadingRate;
 	private StudyStatusEnum tpStatus;
 	
-	private Search search;
+	private String dsSlugProject;
+	private Long nrSearch;
 	
 	public StudyCreatedDto() {}
 	
@@ -49,7 +50,8 @@ public class StudyCreatedDto {
 		this.tpVenue = study.getTpVenue();
 		this.tpReadingRate = study.getTpReadingRate();
 		this.tpStatus = study.getTpStatus();
-		this.search = study.getSearch();
+		this.dsSlugProject = study.getProject().getDsSlug();
+		this.nrSearch = study.getSearch().getNrSearch();
 	}
 	
 	public StudyCreatedDto(String cdCiteKey, String dsTitle, String nmAuthor, String dsAbstract, String dsKeyword, Integer nrYear,
@@ -74,7 +76,7 @@ public class StudyCreatedDto {
 		this.tpVenue = tpVenue;
 		this.tpReadingRate = tpReadingRate;
 		this.tpStatus = tpStatus;
-		this.search = search;
+//		this.search = search;
 	}
 
 	public String getCdCiteKey() {
@@ -213,11 +215,19 @@ public class StudyCreatedDto {
 		this.tpStatus = tpStatus;
 	}
 
-	public Search getSearch() {
-		return search;
+	public String getDsSlugProject() {
+		return dsSlugProject;
 	}
 
-	public void setSearch(Search search) {
-		this.search = search;
+	public void setDsSlugProject(String dsSlugProject) {
+		this.dsSlugProject = dsSlugProject;
+	}
+
+	public Long getNrSearch() {
+		return nrSearch;
+	}
+
+	public void setNrSearch(Long nrSearch) {
+		this.nrSearch = nrSearch;
 	}
 }

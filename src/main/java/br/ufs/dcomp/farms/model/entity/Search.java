@@ -39,6 +39,7 @@ public class Search implements Serializable {
 	private Date dhSearch;
 	private String dsSearch;
 	private SearchEnum tpSearch;
+	private Project project;
 	private AdaptedQuery adaptedQuery;
 	
 	private Set<Study> studies = new HashSet<Study>(0);
@@ -100,6 +101,16 @@ public class Search implements Serializable {
 
 	public void setTpSearch(SearchEnum tpSearch) {
 		this.tpSearch = tpSearch;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_project", nullable = false)
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)

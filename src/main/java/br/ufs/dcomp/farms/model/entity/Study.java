@@ -57,31 +57,6 @@ public class Study implements Serializable {
 	
 	public Study() {}
 	
-	public Study(String cdCiteKey, String dsTitle, String nmAuthor, String dsAbstract, String dsKeyword, Integer nrYear,
-			String dsVolume, String dsUrl, String cdIssnIsbn, String cdDoi, String dsType, String dsPage,
-			String dsComment, String dsJournal, VenueEnum tpVenue, ReadingRateEnum tpReadingRate,
-			StudyStatusEnum tpStatus, Search search) {
-		super();
-		this.cdCiteKey = cdCiteKey;
-		this.dsTitle = dsTitle;
-		this.nmAuthor = nmAuthor;
-		this.dsAbstract = dsAbstract;
-		this.dsKeyword = dsKeyword;
-		this.nrYear = nrYear;
-		this.dsVolume = dsVolume;
-		this.dsUrl = dsUrl;
-		this.cdIssnIsbn = cdIssnIsbn;
-		this.cdDoi = cdDoi;
-		this.dsType = dsType;
-		this.dsPage = dsPage;
-		this.dsComment = dsComment;
-		this.dsJournal = dsJournal;
-		this.tpVenue = tpVenue;
-		this.tpReadingRate = tpReadingRate;
-		this.tpStatus = tpStatus;
-		this.search = search;
-	}
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "StudySequenceGenerator")
 	@Column(name = "id_study", nullable = false, unique = true)
