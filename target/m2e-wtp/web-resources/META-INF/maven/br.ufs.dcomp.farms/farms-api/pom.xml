@@ -53,7 +53,12 @@
 
 	<!-- Dependências -->
 	<dependencies>
-
+		<!-- https://mvnrepository.com/artifact/org.jbibtex/jbibtex -->
+		<dependency>
+			<groupId>org.jbibtex</groupId>
+			<artifactId>jbibtex</artifactId>
+			<version>1.0.15</version>
+		</dependency>
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -127,18 +132,10 @@
 			<version>${spring.version}</version>
 		</dependency>
 
-		<!-- dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-beans</artifactId>
-			<version>${spring.version}</version>
-			<scope>test</scope>
-		</dependency-->
+		<!-- dependency> <groupId>org.springframework</groupId> <artifactId>spring-context</artifactId> 
+			<version>${spring.version}</version> </dependency> <dependency> <groupId>org.springframework</groupId> 
+			<artifactId>spring-beans</artifactId> <version>${spring.version}</version> 
+			<scope>test</scope> </dependency -->
 
 		<!-- Test Artifacts -->
 		<dependency>
