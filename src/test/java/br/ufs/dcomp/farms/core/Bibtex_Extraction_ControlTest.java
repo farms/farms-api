@@ -108,7 +108,7 @@ public class Bibtex_Extraction_ControlTest {
 
 	@Test
 	public void testBibtex_INSTITUTION_extractor() {
-		assertTrue(exitObject.getInstitution().equals("Stra�e"));
+		assertTrue(exitObject.getInstitution().equals("Straße"));
 	}
 
 	@Test
@@ -148,7 +148,7 @@ public class Bibtex_Extraction_ControlTest {
 
 	@Test
 	public void testBibtex_PUBLISHER_extractor() {
-		assertTrue(exitObject.getPublisher().equals("�l�ve"));
+		assertTrue(exitObject.getPublisher().equals("élève"));
 	}
 
 	@Test
@@ -163,7 +163,7 @@ public class Bibtex_Extraction_ControlTest {
 
 	@Test
 	public void testBibtex_TITLE_extractor() {
-		assertTrue(exitObject.getTitle().equals("na�ve"));
+		assertTrue(exitObject.getTitle().equals("naïve"));
 	}
 
 	@Test
