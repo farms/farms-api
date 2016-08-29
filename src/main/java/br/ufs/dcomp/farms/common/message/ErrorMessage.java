@@ -49,4 +49,8 @@ public class ErrorMessage extends Message {
 	private static final Integer INSTITUTION_NOT_FOUND_CODE = 2006;
 	private static final String INSTITUTION_NOT_FOUND_DESCRIPTION = "Institution not found.";
 	public static final ErrorMessage INSTITUTION_NOT_FOUND = new ErrorMessage(INSTITUTION_NOT_FOUND_CODE, INSTITUTION_NOT_FOUND_DESCRIPTION);
+	
+	private static final Integer ACCOUNT_ALREADY_CONFIRMED_CODE = 2007;
+	private static final String ACCOUNT_ALREADY_CONFIRMED_DESCRIPTION = "This email account has already been confirmed.";
+	public static final ErrorMessage ACCOUNT_ALREADY_CONFIRMED = new ErrorMessage(ACCOUNT_ALREADY_CONFIRMED_CODE, ACCOUNT_ALREADY_CONFIRMED_DESCRIPTION);
 }

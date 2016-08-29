@@ -105,4 +105,11 @@ public class ResearcherDao extends HibernateDao<Researcher> {
 		List<Researcher> researchers = query.list();
 		return researchers;
 	}
+
+	public Researcher getByUuid(String cdUuid) {
+		Query query = getSession().createQuery("from Researcher r where lower(r.cdUuid) = lower(?)");
+		query.setString(0, cdUuid);
+		List<Researcher> results = query.list();
+		return (results != null && !results.isEmpty()) ? (Researcher) results.get(0) : null;
+	}
 }

@@ -1,6 +1,7 @@
 package br.ufs.dcomp.farms.model.service;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,6 +14,7 @@ import br.ufs.dcomp.farms.model.dao.ResearcherDao;
 import br.ufs.dcomp.farms.model.dto.ResearcherRegisterDto;
 import br.ufs.dcomp.farms.model.entity.Researcher;
 import br.ufs.dcomp.farms.model.enums.StateEnum;
+import br.ufs.dcomp.farms.model.enums.YesNoEnum;
 
 @Component
 public class ResearcherService {
@@ -34,11 +36,14 @@ public class ResearcherService {
 		}
 		
 		Researcher researcher = new Researcher();
+		UUID uuid = UUID.randomUUID();
+		researcher.setCdUuid(uuid.toString());
 		researcher.setNmResearcher(researcherRegisterDto.getNmResearcher());
 		researcher.setDsSSO(researcherRegisterDto.getDsSSO());
 		researcher.setDsEmail(researcherRegisterDto.getDsEmail());
 		researcher.setDsPassword(FarmsCrypt.hashPassword(researcherRegisterDto.getDsPassword()));
 		researcher.setTpState(StateEnum.A);
+		researcher.setTpConfirmed(YesNoEnum.N);
 		researcherDAO.save(researcher);
 		return true;
 	}
@@ -50,6 +55,13 @@ public class ResearcherService {
 		researcher.setDsSSO(researcherRegisterDto.getDsSSO());
 		researcher.setDsEmail(researcherRegisterDto.getDsEmail());
 		researcher.setDsPassword(researcherRegisterDto.getDsPassword());
+		researcherDAO.update(researcher);
+		return true;
+	}
+	
+	@Transactional(rollbackFor = Exception.class)
+	public boolean confirmAccount(Researcher researcher) {
+		researcher.setTpConfirmed(YesNoEnum.Y);
 		researcherDAO.update(researcher);
 		return true;
 	}
@@ -71,6 +83,14 @@ public class ResearcherService {
 	
 	public Researcher getByEmail(String dsEmail) {
 		Researcher researcher = researcherDAO.getByDsEmail(dsEmail);
+		return researcher;
+	}
+
+	public Researcher getByUuid(String cdUuid) {
+		Researcher researcher = null;
+		if (cdUuid != null) {
+			researcher = researcherDAO.getByUuid(cdUuid);
+		}
 		return researcher;
 	}
 }
