@@ -18,6 +18,7 @@ import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import br.ufs.dcomp.farms.model.enums.StateEnum;
+import br.ufs.dcomp.farms.model.enums.YesNoEnum;
 
 @Entity
 @Table(name = "researcher")
@@ -28,11 +29,13 @@ public class Researcher implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Long idResearcher;
+	private String cdUuid;
 	private String nmResearcher;
 	private String dsSSO;
 	private String dsEmail;
 	private String dsPassword;
 	private StateEnum tpState;
+	private YesNoEnum tpConfirmed;
 	
 	private Set<ProjectMember> projectMembers = new HashSet<ProjectMember>(0);
 	
@@ -65,6 +68,15 @@ public class Researcher implements Serializable {
 		this.idResearcher = idResearcher;
 	}
 
+	@Column(name = "cd_uuid", nullable = false)
+	public String getCdUuid() {
+		return cdUuid;
+	}
+	
+	public String setCdUuid(String cdUuid) {
+		return this.cdUuid = cdUuid;
+	}
+	
 	@Column(name = "nm_researcher", nullable = false)
 	public String getNmResearcher() {
 		return nmResearcher;
@@ -109,6 +121,16 @@ public class Researcher implements Serializable {
 
 	public void setTpState(StateEnum tpState) {
 		this.tpState = tpState;
+	}
+	
+	@Column(name = "tp_confirmed", nullable = false)
+	@Enumerated(EnumType.ORDINAL)
+	public YesNoEnum getTpConfirmed() {
+		return tpConfirmed;
+	}
+	
+	public void setTpConfirmed(YesNoEnum tpConfirmed) {
+		this.tpConfirmed = tpConfirmed;
 	}
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "researcher")

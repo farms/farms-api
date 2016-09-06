@@ -42,7 +42,7 @@ public class ProjectServiceTest {
 	public void testShouldCreateProject() throws FarmsException {
 		
 		ResearcherRegisterDto researcherRegisterDto = this.getValidResearcher_Maria();
-		ResearcherRegisteredDto researcherRegisteredDto = accountService.register(researcherRegisterDto);
+		ResearcherRegisteredDto researcherRegisteredDto = accountService.registerAndSendAccountConfirmationEmail(researcherRegisterDto);
 		Researcher researcher = researcherService.getByEmail(researcherRegisteredDto.getDsEmail());
 		
 		String dsSlug = "ospseems";
