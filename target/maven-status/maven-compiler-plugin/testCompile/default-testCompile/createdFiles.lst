@@ -1,6 +1,14 @@
+br\ufs\dcomp\farms\core\Bibtex_Entry_ControlTest.class
+br\ufs\dcomp\farms\model\dao\map\ColumnsDaoTest.class
 br\ufs\dcomp\farms\model\dao\ReseacherDaoTest.class
-br\ufs\dcomp\farms\model\service\AccountServiceTest.class
+br\ufs\dcomp\farms\core\FarmsMailTest.class
 br\ufs\dcomp\farms\model\dao\SpringUtil.class
-br\ufs\dcomp\farms\model\service\ResearcherServiceTest.class
+br\ufs\dcomp\farms\model\service\map\MappingServiceTest.class
+br\ufs\dcomp\farms\core\FarmsPropertiesTest.class
+br\ufs\dcomp\farms\model\dao\map\SequencesDaoTest.class
+br\ufs\dcomp\farms\model\service\AccountServiceTest.class
 br\ufs\dcomp\farms\model\service\ProjectServiceTest.class
+br\ufs\dcomp\farms\model\dao\map\TablesDaoTest.class
+br\ufs\dcomp\farms\core\Bibtex_Extraction_ControlTest.class
+br\ufs\dcomp\farms\model\service\ResearcherServiceTest.class
 br\ufs\dcomp\farms\core\FarmsCryptTest.class

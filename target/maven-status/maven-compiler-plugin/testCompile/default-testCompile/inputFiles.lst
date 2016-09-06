@@ -1,6 +1,14 @@
-D:\Dev\jee_workspace\FarmsApi\src\test\java\br\ufs\dcomp\farms\model\service\ResearcherServiceTest.java
+D:\Dev\jee_workspace\FarmsApi\src\test\java\br\ufs\dcomp\farms\model\dao\map\ColumnsDaoTest.java
+D:\Dev\jee_workspace\FarmsApi\src\test\java\br\ufs\dcomp\farms\model\dao\map\SequencesDaoTest.java
 D:\Dev\jee_workspace\FarmsApi\src\test\java\br\ufs\dcomp\farms\model\service\AccountServiceTest.java
+D:\Dev\jee_workspace\FarmsApi\src\test\java\br\ufs\dcomp\farms\core\Bibtex_Extraction_ControlTest.java
+D:\Dev\jee_workspace\FarmsApi\src\test\java\br\ufs\dcomp\farms\model\service\ResearcherServiceTest.java
+D:\Dev\jee_workspace\FarmsApi\src\test\java\br\ufs\dcomp\farms\model\service\map\MappingServiceTest.java
+D:\Dev\jee_workspace\FarmsApi\src\test\java\br\ufs\dcomp\farms\core\FarmsMailTest.java
+D:\Dev\jee_workspace\FarmsApi\src\test\java\br\ufs\dcomp\farms\core\Bibtex_Entry_ControlTest.java
+D:\Dev\jee_workspace\FarmsApi\src\test\java\br\ufs\dcomp\farms\model\dao\map\TablesDaoTest.java
 D:\Dev\jee_workspace\FarmsApi\src\test\java\br\ufs\dcomp\farms\model\dao\ReseacherDaoTest.java
 D:\Dev\jee_workspace\FarmsApi\src\test\java\br\ufs\dcomp\farms\model\dao\SpringUtil.java
 D:\Dev\jee_workspace\FarmsApi\src\test\java\br\ufs\dcomp\farms\model\service\ProjectServiceTest.java
+D:\Dev\jee_workspace\FarmsApi\src\test\java\br\ufs\dcomp\farms\core\FarmsPropertiesTest.java
 D:\Dev\jee_workspace\FarmsApi\src\test\java\br\ufs\dcomp\farms\core\FarmsCryptTest.java
