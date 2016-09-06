@@ -23,6 +23,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Institution {
 
 	private Long idInstitution;
+	private String dsAbbreviation;
 	private String nmInstitution;
 	private Country country;
 	private Project project;
@@ -45,6 +46,15 @@ public class Institution {
 
 	public void setIdInstitution(Long idInstitution) {
 		this.idInstitution = idInstitution;
+	}
+
+	@Column(name = "ds_abbreviation", nullable = false)
+	public String getDsAbbreviation() {
+		return dsAbbreviation;
+	}
+
+	public void setDsAbbreviation(String dsAbbreviation) {
+		this.dsAbbreviation = dsAbbreviation;
 	}
 
 	@Column(name = "nm_institution", nullable = false)

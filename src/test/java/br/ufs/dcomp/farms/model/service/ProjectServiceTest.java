@@ -45,7 +45,7 @@ public class ProjectServiceTest {
 		ResearcherRegisteredDto researcherRegisteredDto = accountService.registerAndSendAccountConfirmationEmail(researcherRegisterDto);
 		Researcher researcher = researcherService.getByEmail(researcherRegisteredDto.getDsEmail());
 		
-		String dsSlug = "ospseems";
+		String dsKey = "ospseems";
 		String dsTitle = "Open source projects in software engineering education: a mapping study";
 		StringBuilder dsProject = new StringBuilder();
 		dsProject.append("One possibility to bring practice to Software Engineering Course is to make students participate in Open Source Projects with supervision of teachers. Many researches have been approaching this idea.");
@@ -54,7 +54,7 @@ public class ProjectServiceTest {
 		Long idInstitution = 1L;
 		
 		ProjectCreateDto projectCreateDto = new ProjectCreateDto();
-		projectCreateDto.setDsSlug(dsSlug);
+		projectCreateDto.setDsKey(dsKey);
 		projectCreateDto.setDsTitle(dsTitle);
 		projectCreateDto.setDsProject(dsProject.toString());
 		projectCreateDto.setTpReview(tpReview);
@@ -65,7 +65,7 @@ public class ProjectServiceTest {
 		ProjectMember projectMember = projectCreatedDto.getProjectMember();
 		
 		Assert.assertNotNull(projectCreatedDto);
-		Assert.assertEquals(dsSlug, projectCreatedDto.getDsSlug());
+		Assert.assertEquals(dsKey, projectCreatedDto.getDsKey());
 		Assert.assertEquals(dsTitle, projectCreatedDto.getDsTitle());
 		Assert.assertEquals(dsProject.toString(), projectCreatedDto.getDsProject());
 		Assert.assertEquals(tpReview, projectCreatedDto.getTpReview());
@@ -73,7 +73,7 @@ public class ProjectServiceTest {
 		Assert.assertNotNull(projectMember);
 		Assert.assertNotNull(projectMember.getResearcher());
 		Assert.assertEquals(researcher.getDsSSO(), projectMember.getResearcher().getDsSSO());
-		Assert.assertEquals(dsSlug, projectMember.getProject().getDsSlug());
+		Assert.assertEquals(dsKey, projectMember.getProject().getDsKey());
 		Assert.assertEquals(idInstitution, projectMember.getInstitution().getIdInstitution());
 		Assert.assertEquals(RoleEnum.COORDINATOR, RoleEnum.fromCode(projectMember.getTpRole().getCode()));
 	}
@@ -106,7 +106,7 @@ public class ProjectServiceTest {
 	@Test
     @Transactional
     @Rollback(true)
-	public void testShouldGetStudiesByDsSlug() throws FarmsException {
+	public void testShouldGetStudiesByDsKey() throws FarmsException {
 		
 	}
 	
@@ -130,7 +130,7 @@ public class ProjectServiceTest {
 	
 	private ProjectCreateDto getValidProject_SR_Maria() {
 		ResearcherRegisterDto researcherRegisterDto = this.getValidResearcher_Maria();
-		String dsSlug = "ospseesr";
+		String dsKey = "ospseesr";
 		String dsTitle = "Open source projects in software engineering education: a mapping study";
 		StringBuilder dsProject = new StringBuilder();
 		dsProject.append("One possibility to bring practice to Software Engineering Course is to make students participate in Open Source Projects with supervision of teachers. Many researches have been approaching this idea.");
@@ -139,7 +139,7 @@ public class ProjectServiceTest {
 		Long idInstitution = 1L;
 		
 		ProjectCreateDto projectCreateDto = new ProjectCreateDto();
-		projectCreateDto.setDsSlug(dsSlug);
+		projectCreateDto.setDsKey(dsKey);
 		projectCreateDto.setDsTitle(dsTitle);
 		projectCreateDto.setDsProject(dsProject.toString());
 		projectCreateDto.setTpReview(tpReview.getCode());
@@ -150,7 +150,7 @@ public class ProjectServiceTest {
 	
 	private ProjectCreateDto getValidProject_NS_Maria() {
 		ResearcherRegisterDto researcherRegisterDto = this.getValidResearcher_Maria();
-		String dsSlug = "ospseens";
+		String dsKey = "ospseens";
 		String dsTitle = "Open source projects in software engineering education: a mapping study";
 		StringBuilder dsProject = new StringBuilder();
 		dsProject.append("One possibility to bring practice to Software Engineering Course is to make students participate in Open Source Projects with supervision of teachers. Many researches have been approaching this idea.");
@@ -159,7 +159,7 @@ public class ProjectServiceTest {
 		Long idInstitution = 1L;
 		
 		ProjectCreateDto projectCreateDto = new ProjectCreateDto();
-		projectCreateDto.setDsSlug(dsSlug);
+		projectCreateDto.setDsKey(dsKey);
 		projectCreateDto.setDsTitle(dsTitle);
 		projectCreateDto.setDsProject(dsProject.toString());
 		projectCreateDto.setTpReview(tpReview.getCode());
@@ -170,7 +170,7 @@ public class ProjectServiceTest {
 	
 	private ProjectCreateDto getValidProject_SM_Jose() {
 		ResearcherRegisterDto researcherRegisterDto = this.getValidResearcher_Jose();
-		String dsSlug = "ospseesmjs";
+		String dsKey = "ospseesmjs";
 		String dsTitle = "Open source projects in software engineering education: a mapping study";
 		StringBuilder dsProject = new StringBuilder();
 		dsProject.append("One possibility to bring practice to Software Engineering Course is to make students participate in Open Source Projects with supervision of teachers. Many researches have been approaching this idea.");
@@ -179,7 +179,7 @@ public class ProjectServiceTest {
 		Long idInstitution = 1L;
 		
 		ProjectCreateDto projectCreateDto = new ProjectCreateDto();
-		projectCreateDto.setDsSlug(dsSlug);
+		projectCreateDto.setDsKey(dsKey);
 		projectCreateDto.setDsTitle(dsTitle);
 		projectCreateDto.setDsProject(dsProject.toString());
 		projectCreateDto.setTpReview(tpReview.getCode());
@@ -190,7 +190,7 @@ public class ProjectServiceTest {
 	
 	private ProjectCreateDto getValidProject_SR_Joao() {
 		ResearcherRegisterDto researcherRegisterDto = this.getValidResearcher_Joao();
-		String dsSlug = "ospseesrjo";
+		String dsKey = "ospseesrjo";
 		String dsTitle = "Open source projects in software engineering education: a mapping study";
 		StringBuilder dsProject = new StringBuilder();
 		dsProject.append("One possibility to bring practice to Software Engineering Course is to make students participate in Open Source Projects with supervision of teachers. Many researches have been approaching this idea.");
@@ -199,7 +199,7 @@ public class ProjectServiceTest {
 		Long idInstitution = 1L;
 		
 		ProjectCreateDto projectCreateDto = new ProjectCreateDto();
-		projectCreateDto.setDsSlug(dsSlug);
+		projectCreateDto.setDsKey(dsKey);
 		projectCreateDto.setDsTitle(dsTitle);
 		projectCreateDto.setDsProject(dsProject.toString());
 		projectCreateDto.setTpReview(tpReview.getCode());

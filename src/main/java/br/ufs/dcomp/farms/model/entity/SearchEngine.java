@@ -21,9 +21,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @SequenceGenerator(name = "SearchEngineSequenceGenerator", sequenceName = "sq_search_engine")
 public class SearchEngine implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	private Long idSearchEngine;

@@ -26,7 +26,7 @@ public class Project {
 	
 	private Long idProject;
 	private String dsTitle;
-	private String dsSlug;
+	private String dsKey;
 	private String dsProject;
 	private ReviewEnum tpReview;
 	
@@ -42,9 +42,9 @@ public class Project {
 	
 	public Project() {}
 
-	public Project(String dsTitle, String dsSlug, String dsProject, ReviewEnum tpReview) {
+	public Project(String dsTitle, String dsKey, String dsProject, ReviewEnum tpReview) {
 		this.dsTitle = dsTitle;
-		this.dsSlug = dsSlug;
+		this.dsKey = dsKey;
 		this.dsProject = dsProject;
 		this.tpReview = tpReview;
 	}
@@ -61,12 +61,12 @@ public class Project {
 	}
 
 	@Column(name = "ds_slug", nullable = false, unique = true)
-	public String getDsSlug() {
-		return dsSlug;
+	public String getDsKey() {
+		return dsKey;
 	}
 
-	public void setDsSlug(String dsSlug) {
-		this.dsSlug = dsSlug;
+	public void setDsKey(String dsKey) {
+		this.dsKey = dsKey;
 	}
 	
 	@Column(name = "ds_title", nullable = false)

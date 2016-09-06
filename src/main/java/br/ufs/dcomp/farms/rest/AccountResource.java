@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 import br.ufs.dcomp.farms.common.message.ErrorMessage;
 import br.ufs.dcomp.farms.common.message.SuccessMessage;
 import br.ufs.dcomp.farms.core.FarmsException;
+import br.ufs.dcomp.farms.core.FarmsMail;
 import br.ufs.dcomp.farms.core.FarmsResponse;
 import br.ufs.dcomp.farms.model.dto.ResearcherLoggedDto;
 import br.ufs.dcomp.farms.model.dto.ResearcherLoginDto;
@@ -63,6 +64,7 @@ public class AccountResource {
 			return FarmsResponse.error(fe.getErrorMessage());
 		} catch (Exception ex) {
 			logger.error(ErrorMessage.OPERATION_NOT_RESPONDING, ex);
+			FarmsMail.sendMailText("elissandro.messias@gmail.com", "Erro", ex.getMessage());
 			return FarmsResponse.error(ErrorMessage.OPERATION_NOT_RESPONDING);
 		}
 	}

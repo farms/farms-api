@@ -5,14 +5,14 @@ import java.util.List;
 import org.hibernate.Query;
 import org.springframework.stereotype.Component;
 
-import br.ufs.dcomp.farms.model.entity.Study;
+import br.ufs.dcomp.farms.model.entity.SelectionCriteria;
 
 @Component
 @SuppressWarnings("unchecked")
-public class StudyDao extends HibernateDao<Study> {
+public class SelectionCriteriaDao extends HibernateDao<SelectionCriteria> {
 
-	public StudyDao() {
-		super(Study.class);
+	public SelectionCriteriaDao() {
+		super(SelectionCriteria.class);
 	}
 
 	/**
@@ -21,15 +21,15 @@ public class StudyDao extends HibernateDao<Study> {
 	 * @param dsKey the identifier of the project.
 	 * @return a list of all the studies of the specified project.
 	 */
-	public List<Study> getByDsKeyProject(String dsKey) {
+	public List<SelectionCriteria> getByDsKeyProject(String dsKey) {
 		StringBuilder sbHql = new StringBuilder();
-		sbHql.append("from Study s");
-		sbHql.append(" join fetch s.project p");
+		sbHql.append("from SelectionCriteria sc");
+		sbHql.append(" join fetch sc.project p");
 		sbHql.append(" where p.dsKey = :dsKey");
 		
 		Query query = getSession().createQuery(sbHql.toString());
 		query.setParameter("dsKey", dsKey);
-		List<Study> studies = query.list();
-		return studies;
+		List<SelectionCriteria> selectionCriterias = query.list();
+		return selectionCriterias;
 	}
 }

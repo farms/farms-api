@@ -16,9 +16,9 @@ public class StudyService {
 	@Autowired
 	private StudyDao studyDao;
 
-	public List<StudyCreatedDto> getByDsSlugProject(String dsSlug) {
+	public List<StudyCreatedDto> getByDsKeyProject(String dsKey) {
 		List<StudyCreatedDto> studyCreatedDto = new ArrayList<StudyCreatedDto>();
-		List<Study> studies = studyDao.getByDsSlugProject(dsSlug);
+		List<Study> studies = studyDao.getByDsKeyProject(dsKey);
 		if (studies != null) {
 			for(Study study : studies) {
 				studyCreatedDto.add(new StudyCreatedDto(study));

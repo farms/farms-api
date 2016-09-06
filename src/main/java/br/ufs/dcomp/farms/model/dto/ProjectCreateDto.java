@@ -2,7 +2,7 @@ package br.ufs.dcomp.farms.model.dto;
 
 public class ProjectCreateDto {
 
-	private String dsSlug;
+	private String dsKey;
 	private String dsTitle;
 	private String dsProject;
 	private Integer tpReview;
@@ -13,10 +13,10 @@ public class ProjectCreateDto {
 		super();
 	}
 
-	public ProjectCreateDto(String dsSlug, String dsTitle, String dsProject, Integer tpReview,
+	public ProjectCreateDto(String dsKey, String dsTitle, String dsProject, Integer tpReview,
 			String dsSsoResearcher, Long idInstitution) {
 		super();
-		this.dsSlug = dsSlug;
+		this.dsKey = dsKey;
 		this.dsTitle = dsTitle;
 		this.dsProject = dsProject;
 		this.tpReview = tpReview;
@@ -24,12 +24,12 @@ public class ProjectCreateDto {
 		this.idInstitution = idInstitution;
 	}
 
-	public String getDsSlug() {
-		return dsSlug;
+	public String getDsKey() {
+		return dsKey;
 	}
 
-	public void setDsSlug(String dsSlug) {
-		this.dsSlug = dsSlug;
+	public void setDsKey(String dsKey) {
+		this.dsKey = dsKey;
 	}
 
 	public String getDsTitle() {

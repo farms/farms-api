@@ -23,7 +23,6 @@ import br.ufs.dcomp.farms.model.enums.YesNoEnum;
 @Entity
 @Table(name = "researcher")
 @XmlRootElement
-//@JsonIgnoreProperties({"projectMembers"})
 @SequenceGenerator(name = "ResearcherSequenceGenerator", sequenceName = "sq_researcher")
 public class Researcher implements Serializable {
 

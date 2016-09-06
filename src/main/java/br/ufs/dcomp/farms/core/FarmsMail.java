@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
@@ -28,6 +29,58 @@ public class FarmsMail {
 
 	final static String ACCOUNT_CONFIRMATION_EMAIL_TEMPLATE_HTML = "templates/account-confirmation-email-template.html";
 
+	
+	/**
+	 * Method to send an Email.
+	 * 
+	 * @param dsMailTo
+	 * @param dsSubject
+	 */
+	public static void sendMailText(String dsMailTo, String dsSubject, String dsBodyMessage) {
+		
+		String farmsMailSmtpHost = FarmsProperties.load().getProperty("farms.mail.smtp.host");
+		String farmsMailFromName = FarmsProperties.load().getProperty("farms.mail.contact.name");
+		String farmsMailFrom = FarmsProperties.load().getProperty("farms.mail.contact");
+		String farmsMailPassword = FarmsProperties.load().getProperty("farms.mail.password");
+		
+		// Set mail properties.
+		Properties props = System.getProperties();
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.host", "mail.nords.com.br");
+		props.put("mail.smtp.port", "587");
+		props.put("mail.smtp.auth", "true");
+
+		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication("contato@nords.com.br", "contato7Nords");
+            }
+        });
+		
+		try{
+	         // Create a default MimeMessage object.
+	         MimeMessage message = new MimeMessage(session);
+
+	         // Set From: header field of the header.
+	         message.setFrom(new InternetAddress(farmsMailFrom));
+
+	         // Set To: header field of the header.
+	         message.addRecipient(Message.RecipientType.TO, new InternetAddress(dsMailTo));
+
+	         // Set Subject: header field
+	         message.setSubject("This is the Subject Line!");
+
+	         // Now set the actual message
+	         message.setText(dsBodyMessage);
+
+	         // Send message
+	         Transport.send(message);
+	         System.out.println("Sent message successfully....");
+	      }catch (MessagingException mex) {
+	         mex.printStackTrace();
+	      }
+	}
+	
 	/**
 	 * Send registration confirmation email.
 	 * 

@@ -50,7 +50,7 @@ public class StudyCreatedDto {
 		this.tpVenue = study.getTpVenue();
 		this.tpReadingRate = study.getTpReadingRate();
 		this.tpStatus = study.getTpStatus();
-		this.dsSlugProject = study.getProject().getDsSlug();
+		this.dsSlugProject = study.getProject().getDsKey();
 		this.nrSearch = study.getSearch().getNrSearch();
 	}
 	

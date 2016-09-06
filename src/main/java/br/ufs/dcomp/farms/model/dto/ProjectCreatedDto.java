@@ -5,7 +5,7 @@ import br.ufs.dcomp.farms.model.entity.ProjectMember;
 
 public class ProjectCreatedDto {
 
-	private String dsSlug;
+	private String dsKey;
 	private String dsTitle;
 	private String dsProject;
 	private Integer tpReview;
@@ -17,7 +17,7 @@ public class ProjectCreatedDto {
 
 	public ProjectCreatedDto(Project project) {
 		super();
-		this.dsSlug = project.getDsSlug();
+		this.dsKey = project.getDsKey();
 		this.dsTitle = project.getDsTitle();
 		this.dsProject = project.getDsProject();
 		this.tpReview = project.getTpReview().getCode();
@@ -25,19 +25,19 @@ public class ProjectCreatedDto {
 	
 	public ProjectCreatedDto(Project project, ProjectMember projectMember) {
 		super();
-		this.dsSlug = project.getDsSlug();
+		this.dsKey = project.getDsKey();
 		this.dsTitle = project.getDsTitle();
 		this.dsProject = project.getDsProject();
 		this.tpReview = project.getTpReview().getCode();
 		this.projectMember = projectMember;
 	}
 
-	public String getDsSlug() {
-		return dsSlug;
+	public String getDsKey() {
+		return dsKey;
 	}
 
-	public void setDsSlug(String dsSlug) {
-		this.dsSlug = dsSlug;
+	public void setDsKey(String dsKey) {
+		this.dsKey = dsKey;
 	}
 
 	public String getDsTitle() {
