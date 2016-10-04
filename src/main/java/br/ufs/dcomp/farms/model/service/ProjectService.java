@@ -40,8 +40,8 @@ public class ProjectService {
 	@Transactional(rollbackFor = FarmsException.class)
 	public ProjectCreatedDto save(ProjectCreateDto projectCreateDto) throws FarmsException {
 		
-		ProjectCreatedDto projectFoundByDsSlug = this.getByDsSlug(projectCreateDto.getDsKey());
-		if (projectFoundByDsSlug != null) {
+		ProjectCreatedDto projectFoundByDsKey = this.getByDsKey(projectCreateDto.getDsKey());
+		if (projectFoundByDsKey != null) {
 			throw new FarmsException(ErrorMessage.SLUG_ALREADY_IN_USE);
 		}
 		
@@ -74,8 +74,8 @@ public class ProjectService {
 		return projectCreatedDto;
 	}
 
-	public ProjectCreatedDto getByDsSlug(String dsSlug) {
-		Project project = projectDao.getByDsSlug(dsSlug);
+	public ProjectCreatedDto getByDsKey(String dsKey) {
+		Project project = projectDao.getByDsKey(dsKey);
 		ProjectCreatedDto projectCreatedDto = new ProjectCreatedDto(project);
 		return projectCreatedDto;
 	}

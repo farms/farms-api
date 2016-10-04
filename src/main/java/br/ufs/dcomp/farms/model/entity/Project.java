@@ -60,7 +60,7 @@ public class Project {
 		this.idProject = idProject;
 	}
 
-	@Column(name = "ds_slug", nullable = false, unique = true)
+	@Column(name = "ds_key", nullable = false, unique = true)
 	public String getDsKey() {
 		return dsKey;
 	}

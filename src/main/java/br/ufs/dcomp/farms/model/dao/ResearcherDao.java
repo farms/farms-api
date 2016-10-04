@@ -91,17 +91,17 @@ public class ResearcherDao extends HibernateDao<Researcher> {
 	/**
 	 * Returns all researchers from the specified project.
 	 *
-	 * @param dsSlug the identifier of the project.
+	 * @param dsKey the identifier of the project.
 	 * @return a list of all the researchers of the specified project.
 	 */
-	public List<Researcher> getByDsSlugProject(String dsSlug) {
+	public List<Researcher> getByDsKeyProject(String dsKey) {
 		StringBuilder sbHql = new StringBuilder();
 		sbHql.append("from Researcher r");
 		sbHql.append(" join fetch r.projectMember pm");
-		sbHql.append(" where pm.project.dsSlug = :dsSlug");
+		sbHql.append(" where pm.project.dsKey = :dsKey");
 		
 		Query query = getSession().createQuery(sbHql.toString());
-		query.setParameter("dsSlug", dsSlug);
+		query.setParameter("dsKey", dsKey);
 		List<Researcher> researchers = query.list();
 		return researchers;
 	}

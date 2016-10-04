@@ -37,13 +37,13 @@ public class ProjectDao extends HibernateDao<Project> {
 	}
 	
 	/**
-	 * Search a project by dsSlug.
-	 * @param dsSSO
+	 * Search a project by dsKey.
+	 * @param dsKey
 	 * @return
 	 */
-	public Project getByDsSlug(String dsSlug) {
-		Query query = getSession().createQuery("from Project p where lower(p.dsSlug) = lower(?)");
-		query.setString(0, dsSlug);
+	public Project getByDsKey(String dsKey) {
+		Query query = getSession().createQuery("from Project p where lower(p.dsKey) = lower(?)");
+		query.setString(0, dsKey);
 		List<Project> results = query.list();
 		return (results != null && !results.isEmpty()) ? (Project) results.get(0) : null;
 	}
